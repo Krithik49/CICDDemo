@@ -9,6 +9,9 @@ pool:
 
 steps:
 
-- script: echo "Unknown project type. Skipping build/test."
-  displayName: 'Skip Steps'
+- script: poetry install
+  displayName: 'Install Dependencies'
+
+- script: poetry run pytest
+  displayName: 'Run Tests'
 
